@@ -9,7 +9,7 @@ namespace SpaceShooter
         [SerializeField]
         private float _speed;
 
-        public override void Fly()
+        protected override void Fly()
         {
             _rb.AddForce(Vector2.down * _speed, ForceMode2D.Force);
         }

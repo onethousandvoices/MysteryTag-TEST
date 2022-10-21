@@ -6,12 +6,12 @@ namespace SpaceShooter
     public class LevelInstaller : MonoInstaller
     {
         [SerializeField]
-        private Level _level;
+        private Level[] _levels;
 
         public override void InstallBindings()
         {
             var level =
-                Container.InstantiatePrefabForComponent<Level>(_level, Vector3.zero, Quaternion.identity, null);
+                Container.InstantiatePrefabForComponent<Level>(_levels[0], Vector3.zero, Quaternion.identity, null);
             Container.Bind<Level>().FromInstance(level).AsSingle();
         }
     }

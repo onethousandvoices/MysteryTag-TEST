@@ -10,13 +10,8 @@ namespace SpaceShooter
         [SerializeField]
         private int _speed;
 
-        public override void Fire()
+        protected override void Fire()
             => _rb.AddForce(Vector2.up * _speed, ForceMode2D.Force);
 
-        private void Update()
-        {
-            if (transform.position.y < 5) return;
-            Destroy(gameObject);
-        }
     }
 }

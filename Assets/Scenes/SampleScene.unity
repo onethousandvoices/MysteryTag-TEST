@@ -296,7 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb1680ab41c4a143aeb026416ab0669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 1627259238847435931, guid: 4ac19601ccbac6b4c8740411eefed1a4, type: 3}
+  _levels:
+  - {fileID: 1627259238847435931, guid: 4ac19601ccbac6b4c8740411eefed1a4, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1208262153
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +334,7 @@ MonoBehaviour:
   - {fileID: 1611692315}
   - {fileID: 743772727}
   - {fileID: 480418098}
+  - {fileID: 2127855706}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -363,6 +367,7 @@ Transform:
   - {fileID: 1611692314}
   - {fileID: 743772726}
   - {fileID: 480418097}
+  - {fileID: 2127855707}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -411,6 +416,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
+--- !u!1 &2127855705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127855707}
+  - component: {fileID: 2127855706}
+  m_Layer: 0
+  m_Name: LevelControllerInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2127855706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127855705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4c4f78c1028ef439525f039396db2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelController: {fileID: 2804938975894646756, guid: 88548a3ef4241cc45b4e364ec1e8bd51, type: 3}
+--- !u!4 &2127855707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127855705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1208262155}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950182139347225457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8950182139347225471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -481,5 +531,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 0.0001, y: 1}
   m_EdgeRadius: 0

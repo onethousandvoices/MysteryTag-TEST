@@ -7,7 +7,16 @@ namespace SpaceShooter
     {
         [Inject]
         private Camera _cam;
+
+        [field: SerializeField]
+        public float InvulnerabilityTime { get; private set; }
+        [field: SerializeField]
+        public float ObstaclesTimeSpawnMin { get; private set; }
+        [field: SerializeField]
+        public float ObstaclesTimeSpawnMax { get; private set; }
+
         public float ScreenWidth { get; private set; }
+        public float ScreenHeight { get; private set; }
 
         private void Start()
         {
@@ -27,6 +36,7 @@ namespace SpaceShooter
             var worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
             ScreenWidth = (float)worldScreenWidth / 2;
+            ScreenHeight = (float)worldScreenHeight / 2;
 
             var scaleX = (float)worldScreenWidth / width;
             var scaleY = (float)worldScreenHeight / height;
