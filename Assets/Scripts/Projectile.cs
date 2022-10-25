@@ -2,28 +2,21 @@
 
 namespace SpaceShooter
 {
-    public abstract class Projectile : MonoBehaviour
+    public class Projectile : NonInputFlying
     {
-        private float _screenHeight;
-
-        public void Init(float screenHeight)
-        {
-            _screenHeight = screenHeight;
-            Fire();
-        }
-
-        protected abstract void Fire();
-
-        private void OnTriggerEnter2D(Collider2D col)
+        public override void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject.GetComponent<Obstacle>())
+            {
+                UIController.ProjectileHit();
                 Destroy(col.gameObject);
+            }
             Destroy(gameObject);
         }
 
-        private void Update()
+        public override void Update()
         {
-            if (transform.position.y < _screenHeight) return;
+            if (transform.position.y < ScreenHeight) return;
             Destroy(gameObject);
         }
     }

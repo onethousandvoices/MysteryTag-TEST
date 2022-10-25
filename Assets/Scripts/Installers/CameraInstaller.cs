@@ -9,8 +9,6 @@ namespace SpaceShooter
         private Camera _camera;
 
         public override void InstallBindings()
-        {
-            Container.Bind<Camera>().FromInstance(_camera).AsSingle();
-        }
+            => Container.Bind<Camera>().FromInstance(_camera).AsSingle();
     }
 }

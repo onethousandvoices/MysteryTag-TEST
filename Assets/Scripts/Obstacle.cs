@@ -1,30 +1,21 @@
 ﻿using UnityEngine;
+using SpaceShooter.Views;
 
 namespace SpaceShooter
 {
-    public abstract class Obstacle : MonoBehaviour
+    public class Obstacle : NonInputFlying
     {
-        private float _screenHeight;
-
-        public void Init(float screenHeight)
+        public override void OnTriggerEnter2D(Collider2D col)
         {
-            _screenHeight = screenHeight;
-            Fly();
-        }
-
-        protected abstract void Fly();
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            var ship = col.gameObject.GetComponent<Ship>();
+            var ship = col.gameObject.GetComponent<ShipView>();
             if (!ship || ship.IsVulnerable == false) return;
-            ship.Collision();
+            ship.OnCollision();
             Destroy(gameObject);
         }
 
-        private void Update()
+        public override void Update()
         {
-            if (transform.position.y > - (_screenHeight + 1)) return;
+            if (transform.position.y > - (ScreenHeight + 1)) return;
             Destroy(gameObject);
         }
     }
